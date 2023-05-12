@@ -9,6 +9,10 @@
     "browser",
     "cli"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GeorgeSG/arc-cli.git"
+  },
   "main": "dist/index.js",
   "bin": {
     "arc-cli": "dist/index.js"
