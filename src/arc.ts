@@ -181,8 +181,6 @@ export async function selectSpace(id: Space["id"]) {
       tell front window
         tell space ${id} to focus
       end tell
-
-      activate
     end tell
   `);
 }
