@@ -177,6 +177,8 @@ export async function makeNewTabWithinSpace(url: string, space: Space) {
 
 export async function selectSpace(id: Space["id"]) {
   await runAppleScript(`
+    launch app "Arc"
+    delay "1"
     tell application "Arc"
       tell front window
         tell space ${id} to focus
