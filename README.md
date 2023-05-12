@@ -1,6 +1,6 @@
 # arc-cli
 
-`arc-cli` is a command line interface for the [Arc Browser](https://arc.net/)
+`arc-cli` is a command line interface for the [Arc Browser](https://arc.net/).
 This project is not affiliated with Arc Browser or The Browser Company
 
 
