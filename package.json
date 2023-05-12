@@ -1,5 +1,5 @@
 {
-  "name": "arc-cli",
+  "name": "arccli",
   "version": "0.0.1",
   "description": "A CLI for the Arc Browser",
   "author": "Georgi Gardev <georgi@gar.dev>",
