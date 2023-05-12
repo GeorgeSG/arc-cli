@@ -9,7 +9,7 @@ This project is not affiliated with Arc Browser or The Browser Company
 Required: NodeJS
 
 ```
-npm install -g arc-cli
+npm install -g @georgesg/arc-cli
 ```
 
 # Usage
