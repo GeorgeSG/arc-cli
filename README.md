@@ -33,3 +33,7 @@ Options:
   --help     Show help                                                 [boolean]
   --version  Show version number                                       [boolean]
 ```
+
+# Credits
+
+Inspired by and reusing some code from the [Racyast Arc extension](https://www.raycast.com/the-browser-company/arc).
