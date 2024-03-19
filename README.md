@@ -20,7 +20,8 @@ arc-cli [command]
 Commands:
   arc-cli arc-version                      Show Arc version
   arc-cli list-spaces                      List spaces             [aliases: ls]
-  arc-cli select-space <space-id>          Select a space           [aliases: s]
+  arc-cli select-space <space-id>          Select a space          [aliases: s]
+  arc-cli select-space-name <space-name>   Select a space by name  [aliases: sn]
   arc-cli list-tabs                        List tabs               [aliases: lt]
   arc-cli new-tab <url>                    Open URL in a new tab   [aliases: nt]
   arc-cli select-tab <window-id> <tab-id>  Select tab              [aliases: st]
