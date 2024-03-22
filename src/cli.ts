@@ -32,6 +32,28 @@ export function startCli() {
         }),
       async (argv) => await selectSpace(argv.spaceId)
     )
+    .command(
+      ["select-space-name <space-name>", "sn <space-name>"],
+      "Select a space by name",
+      async (yargs) =>
+        yargs.positional("space-name", {
+          describe: "space to select",
+          type: "string",
+          demandOption: true,
+        }),
+      async (argv) => {
+        const spaces = await getSpaces();
+        const spaceId = spaces
+          ?.map((space) => ({ id: space.id, title: space.title?.toLocaleLowerCase() }))
+          .find((space) => space.title === argv.spaceName.toLowerCase())?.id;
+
+        if (spaceId) {
+          return await selectSpace(spaceId);
+        }
+
+        console.error(`Space with name "${argv.spaceName}" not found`);
+      }
+    )
     .command(["list-tabs", "lt"], "List tabs", async () => {
       console.log("Arc tabs:\n");
       console.log(
