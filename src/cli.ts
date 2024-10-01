@@ -73,8 +73,8 @@ export function startCli() {
           demandOption: true,
         }),
       async ({ url }) => {
-        url = sanitiseUrl(url);
-        await makeNewTab(url)
+        const sanitisedUrl = sanitiseUrl(url);
+        await makeNewTab(sanitisedUrl)
       } 
     )
     .command(
@@ -114,8 +114,8 @@ export function startCli() {
           demandOption: true,
         }),
       async ({ url }) => {
-        url = sanitiseUrl(url);
-        await makeNewLittleArcWindow(url);
+        const sanitisedUrl = sanitiseUrl(url);
+        await makeNewLittleArcWindow(sanitisedUrl);
       } 
     );
 
