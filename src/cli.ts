@@ -1,16 +1,17 @@
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
 import {
-  getVersion,
-  getSpaces,
-  selectSpace,
-  getTabs,
-  makeNewTab,
-  makeNewLittleArcWindow,
-  selectTab,
-  reloadTab,
   closeTab,
+  getSpaces,
+  getTabs,
+  getVersion,
+  makeNewLittleArcWindow,
+  makeNewTab,
+  reloadTab,
+  selectSpace,
+  selectTab,
 } from "./arc.js";
+import { sanitiseUrl } from "./utils/sanitise-url.js";
 
 export function startCli() {
   const cli = yargs(hideBin(process.argv))
@@ -71,7 +72,10 @@ export function startCli() {
           type: "string",
           demandOption: true,
         }),
-      async ({ url }) => await makeNewTab(url)
+      async ({ url }) => {
+        const sanitisedUrl = sanitiseUrl(url);
+        await makeNewTab(sanitisedUrl)
+      } 
     )
     .command(
       ["select-tab <window-id> <tab-id>", "st <window-id> <tab-id>"],
@@ -109,7 +113,10 @@ export function startCli() {
           type: "string",
           demandOption: true,
         }),
-      async ({ url }) => await makeNewLittleArcWindow(url)
+      async ({ url }) => {
+        const sanitisedUrl = sanitiseUrl(url);
+        await makeNewLittleArcWindow(sanitisedUrl);
+      } 
     );
 
   // If there are no args passed, show help screen
